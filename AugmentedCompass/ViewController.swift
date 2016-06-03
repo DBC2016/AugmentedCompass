@@ -53,8 +53,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         default:
             headingString = "?"
         }
-        let wholeDegrees = String(format: "%0.f", newHeading.magneticHeading)
-        headingLabel.text = "\(headingString) \(wholeDegrees) degrees"
+//        let wholeDegrees = String(format: "%0.f", newHeading.magneticHeading)
+//        headingLabel.text = "\(headingString) \(wholeDegrees) degrees"
+         headingLabel.text = "\(headingString)"
     }
     
     @IBAction private func stopGettinghHeading(sender: UIButton) {
@@ -113,24 +114,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    //Code gives access to what's being displayed at the moment
-    
-//    @IBAction private func didPressTakePhotoButton(sender: UIBarButtonItem) {
-//        if let videoConnection = stillImageOutput!.connectionWithMediaType(AVMediaTypeVideo) {
-//            videoConnection.videoOrientation = .Portrait
-//            stillImageOutput?.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: { (sampleBuffer, error) in
-//                if sampleBuffer != nil {
-//                    let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(sampleBuffer)
-//                    let dataProvider = CGDataProviderCreateWithCFData(imageData)
-//                    let cgImageRef = CGImageCreateWithJPEGDataProvider(dataProvider, nil, true, .RenderingIntentDefault)
-//                    let image = UIImage(CGImage: cgImageRef!, scale: 1.0, orientation:  .Right)
-//                    self.capturedImage.image = image
-//                    
-//                }
-//            })
-//            
-//        }
-//    }
     
     
     //MARK: - ROTATION ANGLE METHODS
@@ -164,6 +147,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             angleInDegrees += 90
         }
         angleLabel.text = "Angle: " + String(format: "%.0f", angleInDegrees) + " degrees"
+        
         
     }
 
